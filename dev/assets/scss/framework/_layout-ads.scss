@@ -1,0 +1,47 @@
+.layout-ads {
+    .item {
+        width: 100%;
+        float: left;
+        &:last-child{
+            content:'';
+            display: block;
+            clear: both;
+        }
+    }
+}
+@media only screen and (min-width:500px) {
+    .layout-ads {
+    .item {
+        width: 50%;
+        
+        float: left;
+    }
+}
+}
+@media only screen and (min-width:768px) {
+    .layout-ads {
+    .item {
+        width: 33.33%;
+        
+        float: left;
+    }
+}
+}
+@media only screen and (min-width: 991px) {
+    .layout-ads {
+        
+        margin: 0 auto;
+        .item {
+            width: 25%;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            
+            float: left;
+            &.first {
+                width: 50%;
+                padding-right: 10px;
+                height: 400px;
+            }
+        }
+    }
+}

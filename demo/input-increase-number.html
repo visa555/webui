@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="../dev/assets/plugins/bootstrap/css/bootstrap.css">
+    <style>
+        
+        .room-value{
+            max-width:500px;
+            padding:10px;
+        }
+        .room-value .text-title{
+            width:50%;
+            float:left;
+            line-height: 40px;
+            font-size:18px;
+            text-align: right;
+            padding-right:10px;
+        }
+        .room-value .ui-room-input{
+            width:50%;
+            float:left;
+        }
+        .room-value .input-group .form-control:focus{
+            box-shadow: none;
+        }
+        .room-value .input-group .form-control:not(:first-child):not(:last-child) {
+            
+            height: 40px;
+        }
+        .room-value .input-group-btn:first-child > .btn,.room-value .input-group-btn:first-child > .btn-group {
+            height: 40px;
+        }
+         .room-value .input-group-btn:last-child > .btn,.room-value .input-group-btn:last-child > .btn-group {
+            height: 40px;
+        }
+        .room-value .btn-default[disabled]{
+            background-color: #1485CE;
+            border-color: #1485CE;
+        }
+        .room-value .btn-default:focus{
+            outline: none;
+        }
+        .room-value .btn-default {
+            color: #fff;
+            background-color: #1485CE;
+            border-color: #1485CE;
+        }
+    </style>
+</head>
+
+<body>
+   <a href="#demo" class="btn btn-info" data-toggle="collapse">Simple collapsible</a>
+  <div id="demo" class="collapse">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  </div>
+    <div class="room-value">
+       <span class="text-title">
+           Room(s)
+       </span>
+        <div class="ui-room-input">
+            <div class="input-group">
+          <span class="input-group-btn">
+              <button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
+                  <span class="glyphicon glyphicon-minus"></span>
+              </button>
+          </span>
+          <input type="text" name="quant[1]" class="form-control input-number" value="0" min="0" max="10">
+          <span class="input-group-btn">
+              <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]">
+                  <span class="glyphicon glyphicon-plus"></span>
+              </button>
+          </span>
+      </div>
+        </div>
+    </div>
+
+    <script src="../dev/assets/plugins/jquery/jquery.js"></script>
+    
+    <script src="../dev/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+           
+            //plugin bootstrap minus and plus
+//http://jsfiddle.net/laelitenetwork/puJ6G/
+$('.btn-number').click(function(e){
+    e.preventDefault();
+    
+    fieldName = $(this).attr('data-field');
+    type      = $(this).attr('data-type');
+    var input = $("input[name='"+fieldName+"']");
+    var currentVal = parseInt(input.val());
+    if (!isNaN(currentVal)) {
+        if(type == 'minus') {
+            
+            if(currentVal > input.attr('min')) {
+                input.val(currentVal - 1).change();
+            } 
+            if(parseInt(input.val()) == input.attr('min')) {
+                $(this).attr('disabled', true);
+            }
+
+        } else if(type == 'plus') {
+
+            if(currentVal < input.attr('max')) {
+                input.val(currentVal + 1).change();
+            }
+            if(parseInt(input.val()) == input.attr('max')) {
+                $(this).attr('disabled', true);
+            }
+
+        }
+    } else {
+        input.val(0);
+    }
+});
+$('.input-number').focusin(function(){
+   $(this).data('oldValue', $(this).val());
+});
+$('.input-number').change(function() {
+    
+    minValue =  parseInt($(this).attr('min'));
+    maxValue =  parseInt($(this).attr('max'));
+    valueCurrent = parseInt($(this).val());
+    
+    name = $(this).attr('name');
+    if(valueCurrent >= minValue) {
+        $(".btn-number[data-type='minus'][data-field='"+name+"']").removeAttr('disabled')
+    } else {
+        alert('Sorry, the minimum value was reached');
+        $(this).val($(this).data('oldValue'));
+    }
+    if(valueCurrent <= maxValue) {
+        $(".btn-number[data-type='plus'][data-field='"+name+"']").removeAttr('disabled')
+    } else {
+        alert('Sorry, the maximum value was reached');
+        $(this).val($(this).data('oldValue'));
+    }
+    
+    
+});
+$(".input-number").keydown(function (e) {
+        // Allow: backspace, delete, tab, escape, enter and .
+        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 190]) !== -1 ||
+             // Allow: Ctrl+A
+            (e.keyCode == 65 && e.ctrlKey === true) || 
+             // Allow: home, end, left, right
+            (e.keyCode >= 35 && e.keyCode <= 39)) {
+                 // let it happen, don't do anything
+                 return;
+        }
+        // Ensure that it is a number and stop the keypress
+        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+            e.preventDefault();
+        }
+    });
+        });
+    </script>
+
+</body>
+
+</html>

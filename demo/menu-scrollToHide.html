@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+
+
+    <link href="../assets/css/main.min.css" rel="stylesheet" />
+    <style>
+        .site-header{
+            height:60px;
+            background-color:#eeeeee;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="site-header menu-scroll-hidden">
+        
+    </div>
+    <!--content-->
+    <div style="height:1200px;">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit ipsa autem dolore, voluptatum sunt, officiis dicta sed et assumenda libero alias, repellendus cum perferendis voluptates! Molestias recusandae ea reiciendis odit!
+    </div>
+    <!--content-->
+    <script src="../assets/js/custom.min.js" type="text/javascript"></script>
+    <script>
+        $(function () {
+    var start_scroll = $(document).scrollTop();
+    var header_menu = $('.menu-scroll-hidden').outerHeight();
+
+    $(window).scroll(function () {
+        var current_scroll = $(document).scrollTop();
+
+        if (current_scroll > header_menu) {
+            $('.menu-scroll-hidden').addClass('remove');
+        } else {
+            $('.menu-scroll-hidden').removeClass('remove');
+        }
+
+        if (current_scroll > start_scroll) {
+            $('.menu-scroll-hidden').removeClass('show-menu');
+        } else {
+            $('.menu-scroll-hidden').addClass('show-menu');
+        }
+
+        start_scroll = $(document).scrollTop();
+    });
+    
+});
+    </script>
+</body>
+
+</html>

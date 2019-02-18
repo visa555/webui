@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+
+
+    <link href="../assets/css/main.min.css" rel="stylesheet" />
+    <style>
+        .content {}
+        
+        .info {
+            color: #222222;
+            width: 100%;
+            display: block;
+            float: right;
+        }
+        
+        .image {
+            width: 100%;
+            display: block;
+            float: right;
+            height: 400px;
+        }
+        
+        @media only screen and (min-width: 768px) {
+            .info {
+                color: #222222;
+                
+                display: block;
+               
+                height: 400px;
+                position: relative;
+            }
+            .image {
+                
+                display: block;
+               
+                height: 400px;
+            }
+            .elem-center {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            .bg {
+                background-color: #f8f8f8;
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+            .profile {
+                position: relative;
+                z-index: 100;
+                padding: 50px 50px 50px 30px;
+            }
+            .profile strong {
+                font-size: 36px;
+                font-weight: bold;
+            }
+            .profile p {
+                margin-top: 10px;
+                font-size: 16px;
+                font-weight: 200;
+                padding-left: 120px;
+                position: relative;
+                color: #888888;
+            }
+            .profile p::before {
+                content: '';
+                display: block;
+                border: 2px solid #222222;
+                position: absolute;
+                top: 10px;
+                left: 0px;
+                width: 100px;
+            }
+            .noPaddingLeft{
+                padding-left:0px;
+            }
+            .noPaddingRight{
+                padding-right:0px;
+            }
+            
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="container">
+        <div class="row">
+           <div class="col-md-5 col-md-push-7 noPaddingLeft">
+                <div class="image" style="background-image:url(../images/ads1.jpg);background-size:cover;background-position:center center;">
+
+                </div>
+            </div>
+            <div class="col-md-7 col-md-pull-5  noPaddingRight">
+                <div class="info">
+                        <div class="profile elem-center">
+                            <strong>Visa Umandkiatgul</strong>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum delectus soluta similique illum, harum. Ullam, veniam, nulla. Repudiandae, voluptates. Officiis at voluptatem nisi, consectetur quisquam minus numquam, sunt doloremque consequatur.
+                            </p>
+                        </div>
+                        <div class="bg"></div>
+                    </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="../dev/assets/plugins/bootstrap/css/bootstrap.css">
+
+</head>
+
+<body>
+
+    <div class="paragrahp-collapse" data-morelink="my read more" data-lesslink="less more">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore non laudantium, ipsam veniam ut ipsum quae temporibus, culpa vitae iste ad delectus dolores ratione quisquam, aut repellat voluptatibus atque ea. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur dolorem, accusamus quam cum repellendus atque numquam autem nemo natus dolore dolorum, cumque quibusdam vitae nam quae recusandae debitis. Tenetur, ad! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque quibusdam explicabo nihil aut, repellat praesentium veniam non iste sequi inventore hic qui sapiente mollitia dolores ab quos consequuntur rem. Voluptatibus.
+
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore non laudantium, ipsam veniam ut ipsum quae temporibus, culpa vitae iste ad delectus dolores ratione quisquam, aut repellat voluptatibus atque ea. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur dolorem, accusamus quam cum repellendus atque numquam autem nemo natus dolore dolorum, cumque quibusdam vitae nam quae recusandae debitis. Tenetur, ad! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque quibusdam explicabo nihil aut, repellat praesentium veniam non iste sequi inventore hic qui sapiente mollitia dolores ab quos consequuntur rem. Voluptatibus.
+
+        </p>
+    </div>
+<div class="paragrahp-collapse">
+        <div class="content">
+            <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore non laudantium, ipsam veniam ut ipsum quae temporibus, culpa vitae iste ad delectus dolores ratione quisquam, aut repellat voluptatibus atque ea. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur dolorem, accusamus quam cum repellendus atque numquam autem nemo natus dolore dolorum, cumque quibusdam vitae nam quae recusandae debitis. Tenetur, ad! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque quibusdam explicabo nihil aut, repellat praesentium veniam non iste sequi inventore hic qui sapiente mollitia dolores ab quos consequuntur rem. Voluptatibus.
+
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore non laudantium, ipsam veniam ut ipsum quae temporibus, culpa vitae iste ad delectus dolores ratione quisquam, aut repellat voluptatibus atque ea. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur dolorem, accusamus quam cum repellendus atque numquam autem nemo natus dolore dolorum, cumque quibusdam vitae nam quae recusandae debitis. Tenetur, ad! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque quibusdam explicabo nihil aut, repellat praesentium veniam non iste sequi inventore hic qui sapiente mollitia dolores ab quos consequuntur rem. Voluptatibus.
+
+        </p>
+        </div>
+    </div>
+    
+    <script src="../dev/assets/plugins/jquery/jquery.js"></script>
+    <script src="../dev/assets/plugins/readmorejs/readmore.js?v=7"></script>
+    <script src="../dev/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var objBox = $('.paragrahp-collapse .content');
+            objBox.each(function () {
+                var eleContent = $(this);
+                eleContent.readmore({
+                    speed: 75,
+                    lessLink: eleContent.data('lesslink') ? '<a href="#">' + eleContent.data('lesslink') + '</a>' : '<a href="#">Close</a>',
+                    moreLink: eleContent.data('morelink') ? '<a href="#">' + eleContent.data('morelink') + '</a>' : '<a href="#">Read More</a>'
+                });
+            });
+            $('m').readmore();
+
+
+        });
+    </script>
+
+</body>
+
+</html>

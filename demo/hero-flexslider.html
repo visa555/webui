@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+
+
+    <link href="../assets/css/main.min.css" rel="stylesheet" />
+    <link href="../dev/assets/plugins/flexslider/flexslider.css" rel="stylesheet" />
+    
+</head>
+
+<body>
+    <div class="hero-flexslider">
+        <div class="overlay">
+            <div class="hero-text">
+                <h1>
+                        LK EMERALD BEACH PATTAYA
+                    </h1>
+                <p>The official site of The LK GROUP of Thailand</p>
+
+            </div>
+        </div>
+        <div class="kenburn-slider">
+            <ul class="slides">
+                <li>
+                    <div class="slide-image" data-bg="https://ununsplash.imgix.net/photo-1429277096327-11ee3b761c93?fit=crop&amp;fm=jpg&amp;h=700&amp;q=75&amp;w=1050" data-kenburn-start="center center"></div>
+                </li>
+                <li>
+                    <div class="slide-image" data-bg="https://ununsplash.imgix.net/photo-1428954376791-d9ae785dfb2d?fit=crop&amp;fm=jpg&amp;h=700&amp;q=75&amp;w=1050" data-kenburn-start="top left"></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script src="../assets/js/custom.min.js" type="text/javascript"></script>
+    <script src="../dev/assets/plugins/flexslider/jquery.flexslider-min.js" type="text/javascript"></script>
+    <script>
+        $().ready(function () {
+            $(".slide-image").each(function () {
+                var bg = $(this).data("bg");
+                var pos = $(this).data("kenburn-start");
+
+                $(this).css({
+                    "background-image": "url(" + bg + ")",
+                    "transform-origin": pos
+                });
+            });
+
+            $(".kenburn-slider").flexslider({
+                slideshow: true,
+                slideshowSpeed: 5000,
+                animationSpeed: 1000,
+                controlNav: false,
+                directionNav: false
+            });
+        });
+    </script>
+</body>
+
+</html>

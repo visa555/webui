@@ -1,0 +1,19 @@
+$menuBackgroundRemove:#222222;
+
+.menu-scroll-hidden {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    transition: all .5s;
+    z-index: 9999;
+}
+.menu-scroll-hidden.remove {
+    top: -130px;
+}
+.menu-scroll-hidden.remove.show-menu {
+    transition: all .5s;
+    background-color: $menuBackgroundRemove;
+    top: 0;
+    z-index: 9999;
+}

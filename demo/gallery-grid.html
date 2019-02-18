@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link href="../dev/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../dev/assets/plugins/lightGallery/css/lightgallery.min.css" rel="stylesheet" />
+    <link href="../assets/css/main.min.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <div class="bh-product-gallery">
+        <div class="item">
+            <a href="../images/ads1.jpg" data-exthumbimage="../images/ads1.jpg" class="image" style="background:url('../images/ads1.jpg')">
+
+            </a>
+        </div>
+        <div class="item">
+            <a href="../images/ads2.jpg" data-exthumbimage="../images/ads2.jpg" class="image" style="background:url('../images/ads2.jpg')">
+
+            </a>
+        </div>
+        <div class="item">
+            <a href="../images/ads3.jpg" data-exthumbimage="../images/ads3.jpg" class="image" style="background:url('../images/ads3.jpg')">
+
+            </a>
+        </div>
+        <div class="item">
+            <a href="../images/ads1.jpg" data-exthumbimage="../images/ads1.jpg" class="image last" style="background:url('../images/ads1.jpg')">
+                <span>See More</span>
+            </a>
+        </div>
+    </div>
+    
+    With layout
+    
+    <div class="product-header-info">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                  <div class="bh-product-gallery">
+        <div class="item">
+            <a href="../images/ads1.jpg" data-exthumbimage="../images/ads1.jpg" class="image" style="background:url('../images/ads1.jpg')">
+
+            </a>
+        </div>
+        <div class="item">
+            <a href="../images/ads2.jpg" data-exthumbimage="../images/ads2.jpg" class="image" style="background:url('../images/ads2.jpg')">
+
+            </a>
+        </div>
+        <div class="item">
+            <a href="../images/ads3.jpg" data-exthumbimage="../images/ads3.jpg" class="image" style="background:url('../images/ads3.jpg')">
+
+            </a>
+        </div>
+        <div class="item">
+            <a href="../images/ads1.jpg" data-exthumbimage="../images/ads1.jpg" class="image last" style="background:url('../images/ads1.jpg')">
+                <span>See More</span>
+            </a>
+        </div>
+    </div>  
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <div class="product-info-banner">
+                        <div class="item" style="background-image:url(http://dummyimage.com/800x400/000/fff)">
+
+                        </div>
+                        <div class="item" style="background-image:url(http://dummyimage.com/800x400/000/fff)">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../dev/assets/plugins/jquery/jquery.js" type="text/javascript"></script>
+
+    <script src="../dev/assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <!--Plugin-->
+    <script src="../dev/assets/plugins/lightGallery/js/lightgallery.min.js" type="text/javascript"></script>
+    <script src="../dev/assets/plugins/lightGallery/js/lg-thumbnail.min.js" type="text/javascript"></script>
+    <script src="../dev/assets/plugins/lightGallery/js/lg-fullscreen.min.js" type="text/javascript"></script>
+    <!--/Plugin-->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".bh-product-gallery").lightGallery({
+                selector: '.image',
+                exThumbImage: 'data-exthumbimage'
+            });
+        });
+    </script>
+</body>
+
+</html>

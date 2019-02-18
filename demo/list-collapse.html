@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="../dev/assets/plugins/bootstrap/css/bootstrap.css">
+    <style>
+        .list-collapse li:nth-child(n+3) {
+            display: none;
+            opacity: 0;
+            transition: all 0.8s ease-in-out;
+        }
+        
+        .list-collapse.open li:nth-child(n+3) {
+            display: block;
+            opacity: 1;
+            transition: all 0.8s ease-in-out;
+            height: auto;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="list-collapse" id="facility">
+        <ul class="list-unstyled">
+            <li><a href="">Item1</a></li>
+            <li><a href="">Item2</a></li>
+            <li><a href="">Item3</a></li>
+            <li><a href="">Item4</a></li>
+        </ul>
+        <a href="#facility" data-expand="View more" data-collapse="Less view" class="btn-list-collapse">
+            View more
+        </a>
+    </div>
+    <ul class="m">
+        <li>Home</li>
+        <li>adfa</li>
+        <li>asdfa</li>
+        <li>adsfas</li>
+        <li>adsfas</li>
+        <li>adsfas</li>
+        <li>adsfas</li>
+        <li>adsfas</li>
+        <li>adsfas</li>
+        <li>adsfas</li>
+        <li>adsfas</li>
+        <li>adsfas</li>
+        <li>adsfas</li>
+        <li>adsfas</li>
+        <li>adsfas</li>
+        <li>adsfas</li>
+        <li>adsfas</li>
+        <li>adsfas</li>
+    </ul>
+
+
+    <script src="../dev/assets/plugins/jquery/jquery.js"></script>
+    <script src="../dev/assets/plugins/readmorejs/readmore.js?v=7"></script>
+    <script src="../dev/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+           
+            $(document).on('click', '.btn-list-collapse', function (e) {
+                var objElm=$(this);
+                e.stopPropagation();
+                $(objElm.attr('href')).toggleClass('open');
+
+                if ($(objElm.attr('href')).hasClass('open')) {
+                    objElm.html(objElm.data('collapse'));
+                } else {
+                    objElm.html(objElm.data('expand'));
+                }
+
+
+            })
+$('.m').readmore();
+        });
+    </script>
+
+</body>
+
+</html>

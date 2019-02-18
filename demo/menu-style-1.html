@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="../dev/assets/plugins/bootstrap/css/bootstrap.css">
+    
+    <link rel="stylesheet" href="../dev/assets/plugins/font-awesome/css/font-awesome.css">
+    
+
+    <style>
+        .logo {
+            float: left;
+            display: inline-block;
+            color: #FFFFFF;
+            font-size: 24px;
+            margin-left: 15px;
+            height: 90px;
+        }
+        
+        #site-header {
+            background-color: #333333;
+            line-height: 90px;
+            height: 90px;
+        }
+        #site-header img.logo{
+            vertical-align: top;
+        }
+        #site-header .menu-bar {
+            float: right;
+        }
+        
+        .menu-bar {
+            display: none;
+            color: #FFFFFF;
+        }
+        
+        .menu-bar>ul {
+            display: inline-block;
+        }
+        
+        .menu-bar>ul>li {}
+        
+        .menu-bar>ul>li a {
+            color: #FFFFFF;
+            font-size: 16px;
+            font-weight: 400;
+        }
+        
+        .menu-book {
+            padding-right: 0px !important;
+        }
+        
+        .menu-book a {
+            display: inline-block;
+            height: 100%;
+            padding: 0 40px;
+            margin: 0px;
+            background-color: #2EAEC5;
+        }
+        
+        .menu-bar .dropdown-menu a {
+            color: #222222;
+        }
+        
+        .button_container {
+            display: inline-block;
+            position: relative;
+            height: 27px;
+            width: 30px;
+            cursor: pointer;
+            vertical-align: middle;
+            z-index: 1000;
+            transition: opacity .25s ease;
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+        
+        .button_container:hover {
+            opacity: .7;
+        }
+        
+        .button_container.active .top {
+            transform: translateY(11px) translateX(0) rotate(45deg);
+            background: #FFF;
+        }
+        
+        .button_container.active .middle {
+            opacity: 0;
+            background: #FFF;
+        }
+        
+        .button_container.active .bottom {
+            transform: translateY(-11px) translateX(0) rotate(-45deg);
+            background: #FFF;
+        }
+        
+        .button_container span {
+            background: #FFFFFF;
+            border: none;
+            height: 3px;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: all .35s ease;
+            cursor: pointer;
+        }
+        
+        .button_container span:nth-of-type(2) {
+            top: 11px;
+        }
+        
+        .button_container span:nth-of-type(3) {
+            top: 22px;
+        }
+        
+        .overlay {
+            position: fixed;
+            background: #222222;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0%;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity .35s, visibility .35s, height .35s;
+            overflow: hidden;
+        }
+        
+        .overlay.open {
+            opacity: .9;
+            visibility: visible;
+            height: 100%;
+            overflow-y: auto;
+        }
+        
+        .overlay.open li {
+            animation: fadeInRight .5s ease forwards;
+            animation-delay: .35s;
+        }
+        
+        .overlay.open li:nth-of-type(2) {
+            animation-delay: .4s;
+        }
+        
+        .overlay.open li:nth-of-type(3) {
+            animation-delay: .45s;
+        }
+        
+        .overlay.open li:nth-of-type(4) {
+            animation-delay: .50s;
+        }
+        
+        .overlay nav {
+            position: relative;
+            height: 70%;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 30px;
+            font-family: 'Varela Round', serif;
+            font-weight: 400;
+            text-align: center;
+        }
+        
+        .overlay ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 auto;
+            display: inline-block;
+            position: relative;
+            height: 100%;
+        }
+        
+        .overlay ul li {
+            display: block;
+            /*height: 25%;
+            height: calc(100% / 4);
+            */
+            height: 60px;
+            min-height: 50px;
+            position: relative;
+            opacity: 0;
+        }
+        
+        .overlay ul li a {
+            display: block;
+            position: relative;
+            color: #FFF;
+            text-decoration: none;
+            overflow: hidden;
+        }
+        
+        .overlay ul li a:hover:after,
+        .overlay ul li a:focus:after,
+        .overlay ul li a:active:after {
+            width: 80%;
+        }
+        
+        .overlay ul li a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0%;
+            transform: translateX(-50%);
+            height: 3px;
+            background: #bba66d;
+            transition: .35s;
+        }
+        
+        @keyframes fadeInRight {
+            0% {
+                opacity: 0;
+                left: 20%;
+            }
+            100% {
+                opacity: 1;
+                left: 0;
+            }
+        }
+        .menu-mobile {
+                text-align: right;
+            }
+        @media only screen and (min-width: 769px) {
+            .menu-mobile {
+                display: none;
+            }
+            .menu-bar {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+   
+    <div class="overlay" id="overlay">
+        <nav class="overlay-menu">
+            <ul>
+                <li><a href="#">Home</a></li>
+
+                <li><a href="#">Facilities</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Near by</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div id="site-header">
+        
+        <a href="">
+            <img src="../images/logo.png" class="logo">
+        </a>
+        <div class="menu-bar">
+            <ul class="list-inline">
+                <li><a href="">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                    </ul>
+                </li>
+                <li><a href="">Facilities</a></li>
+                <li><a href="">Contact</a></li>
+                <li class="menu-book"><a href="">Book Now</a></li>
+            </ul>
+        </div>
+        <div class="menu-mobile">
+            <a href="#" style="border:2px solid #eeeeee;padding:10px;">Book Now</a>
+<div class="button_container" id="toggle"><span class="top"></span><span class="middle"></span><span class="bottom"></span></div>
+
+        </div>
+
+    </div>
+    
+    <script src="../dev/assets/plugins/jquery/jquery.js"></script>
+    
+    <script src="../dev/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script>
+    $().ready(function(){
+        $('#toggle').click(function () {
+            $(this).toggleClass('active');
+            $('#overlay').toggleClass('open');
+        });
+    });
+    </script>
+
+</body>
+
+</html>

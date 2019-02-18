@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="../dev/assets/plugins/bootstrap/css/bootstrap.css">
+    
+</head>
+
+<body>
+    
+    <style>
+        .box-search input[type="text"] {
+            height: 40px;
+            line-height: 40px;
+            width: 100%;
+            margin-bottom: 15px;
+            overflow: hidden;
+            font-size:18px;
+        }
+        .box-search .input-elem{
+            height: 40px;
+            line-height: 40px;
+            width: 100%;
+            margin-bottom: 10px;
+            overflow: hidden;
+            font-size:18px;
+            background-color:#EEEEEE;
+            display: inline-block;
+            padding:0px 15px;
+            font-size: 18px;
+        }
+        
+        
+        .box-search button {
+            height: 40px;
+            line-height: 40px;
+            width: 100%;
+            vertical-align: middle;
+        }
+        
+        @media only screen and (min-width: 768px) {
+            .box-search {
+                display: table;
+                width: 100%;
+                margin-top: 20px;
+            }
+            .box-search input[type="text"] {
+                margin-bottom: 0px;
+            }
+            .box-search .input-elem{
+                vertical-align: middle;
+                margin-bottom:0px;
+            }
+            .box-search .input-cell {
+                display: table-cell;
+                padding-right: 2px;
+                vertical-align: middle;
+                
+            }
+            .box-search .input-cell:last-child {
+                padding-right: 0px;
+            }
+            .column-3{
+                width:33%;
+            }
+            .coupon-code{
+                width:200px;
+            }
+            /*custom*/
+            
+        }
+    </style>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box-search">
+                    <div class="input-cell">
+                        <strong class="input-elem">Online Reservation</strong>
+                    </div>
+                    
+                    <div class="input-cell">
+                        <div class="input-elem">Check In</div>
+                    </div>
+                    <div class="input-cell">
+                        <div class="input-elem">Check In</div>
+                    </div>
+                    <div class="input-cell coupon-code">
+                        <input type="text" name="" id="">
+                    </div>
+                    
+                    <div class="input-cell">
+                        <button>Search</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../dev/assets/plugins/jquery/jquery.js"></script>
+    
+    <script src="../dev/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+
+</body>
+
+</html>

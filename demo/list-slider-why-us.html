@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+
+
+    <link href="../assets/css/main.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../dev/assets/plugins/slick/slick.css">
+    <link rel="stylesheet" href="../dev/assets/plugins/slick/slick-theme.css">
+    <style>
+        .why-choose{
+            background-color:#E5AF29;
+            color:#FFFFFF;
+            text-align: center;
+            padding:10px 0px;
+             letter-spacing: 1px;
+        }
+        .why-choose strong{
+            font-size:12px;
+            text-transform: uppercase;
+            font-weight: 200;
+            color:#F8E8C8;
+        }
+        .why-choose p{
+            font-size:20px;
+            text-transform: uppercase;
+            font-weight: 200;
+            color:#FFFFFF;
+            margin-bottom:0px;
+        }
+        .data-item {
+            
+        }
+        
+        
+    </style>
+</head>
+
+<body>
+    <div class="why-choose">
+        <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="responsive">
+                    <div class="data-item">
+                       <strong>Lorem ipsum dolor sit amet, consectetur adipisicing</strong>
+                       <p>
+                           best price online guarantee
+                       </p>
+                    </div>
+                    <div class="data-item">
+                       <strong>Lorem ipsum dolor sit amet, consectetur adipisicing</strong>
+                       <p>
+                           AVAILABLE 24H A DAY, EVERY DAY OF THE YEAR!
+                       </p>
+                    </div>
+                    <div class="data-item">
+                       <strong>Lorem ipsum dolor sit amet, consectetur adipisicing</strong>
+                       <p>
+                           DIRECT SHOPPING, WITHOUT INTERMEDIARIES!
+                       </p>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="../assets/js/custom.min.js" type="text/javascript"></script>
+    <script src="../dev/assets/plugins/slick/slick.js" type="text/javascript"></script>
+
+    <script>
+        $().ready(function () {
+            $('.responsive').slick({
+               
+                infinite: true,
+                speed: 700,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay:true
+            });
+
+        });
+    </script>
+</body>
+
+</html>

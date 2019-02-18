@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+
+    <link href="../assets/css/main.min.css" rel="stylesheet" />
+    <link rel='stylesheet' href='http://engine.booking2hotels.com/css/b2h.engine.v2.min.css' type='text/css' />
+
+</head>
+
+<body>
+
+
+    <div class="DateCalendarVersion2">
+        <form name="frmCheckRate" id="frmCheckRate" method="post" action="#">
+            <!--Bak-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2">
+                        <div class="pickadate-container">
+                            <div class="pickadate-detail ">
+                                <span class="pickadate-date">
+                                            <span class="pickadate-mm">MM</span> <span class="pickadate-yy">YYYY</span>
+                                <strong><span class="pickadate-dd">DD</span></strong>
+                                <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+                                </span>
+                                <input type="hidden" readonly="hidden" name="dateci" value="" id="dateci" class="hasDatepicker">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="pickadate-container">
+                            <div class="pickadate-detail ">
+                                <span class="pickadate-date">
+                                        <span class="pickadate-mm">MM</span> <span class="pickadate-yy">YYYY</span>
+                                <strong><span class="pickadate-dd">DD</span></strong>
+                                <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+                                </span>
+                                <input type="hidden" readonly="hidden" name="dateco" value="" id="dateco" class="hasDatepicker">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="text" placeholder="Apply Here" id="discountcode" name="discountcode" class="form-control uppercase text_center">
+            <a class="btn btn-default" href="javasrcipt:void(0)" name="btnBook" id="btnBook">Check Rate</a>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            
+            <!--/Bak-->
+        </form>
+    </div>
+    <script type='text/javascript' src='http://code.jquery.com/jquery-1.10.2.min.js'></script>
+    <script type='text/javascript' src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
+    <script type='text/javascript' src='http://engine.booking2hotels.com/pickadate/b2h.engine.v2.min.js'></script>
+    <script>
+        $(document).ready(function () {
+            $('#frmCheckRate').b2hPicker({
+                defaultdate: false,
+                UrgentBooking: false,
+                PromoCode: false,
+                selectMonths: false,
+                selectYears: false,
+                module_member: false,
+                member_page: false,
+                CrossDomain: false,
+                PID: 3690,
+                RateExchangeId: 25,
+                Version: 2,
+                lang: 1,
+                Review: true,
+                Promotion: true,
+                DateCalendarFormat: 'dd mmmm yyyy',
+                DateCalendarVersion: 2,
+                MaxCheckOut: 0
+            });
+        });
+    </script>
+</body>
+
+</html>
