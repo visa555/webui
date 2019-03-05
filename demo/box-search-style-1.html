@@ -40,7 +40,12 @@
             width: 100%;
             vertical-align: middle;
         }
-        
+        .coupon-code.toggle input{
+            display:none;
+        }
+        .coupon-code.toggle.open input{
+            display:inline-block;
+        }
         @media only screen and (min-width: 768px) {
             .box-search {
                 display: table;
@@ -88,6 +93,31 @@
                         <div class="input-elem">Check In</div>
                     </div>
                     <div class="input-cell coupon-code">
+                        <input type="text" name="" id="">
+                    </div>
+                    
+                    <div class="input-cell">
+                        <button>Search</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box-search">
+                    <div class="input-cell">
+                        <strong class="input-elem">Online Reservation</strong>
+                    </div>
+                    
+                    <div class="input-cell">
+                        <div class="input-elem">Check In</div>
+                    </div>
+                    <div class="input-cell">
+                        <div class="input-elem">Check In</div>
+                    </div>
+                    <div class="input-cell coupon-code toggle">
+                        <a href="">Redeem Code</a>
                         <input type="text" name="" id="">
                     </div>
                     

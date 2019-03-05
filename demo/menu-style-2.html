@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="../dev/assets/plugins/bootstrap/css/bootstrap.css">
+
+    <link rel="stylesheet" href="../dev/assets/plugins/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../dev/assets/plugins/pushy/css/pushy.css?v=3">
+    <link rel="stylesheet" href="../dev/assets/plugins/pushy/css/demo.css?v=1">
+
+
+    <style>
+        .logo {
+            float: left;
+            display: inline-block;
+            color: #FFFFFF;
+            font-size: 24px;
+            margin-left: 15px;
+            height: 90px;
+        }
+        
+        #site-header {
+            background-color: #333333;
+            line-height: 90px;
+            height: 90px;
+        }
+        
+        #site-header img.logo {
+            vertical-align: top;
+        }
+        
+        #site-header .menu-bar {
+            float: right;
+        }
+        
+        .menu-bar {
+            display: none;
+            color: #FFFFFF;
+        }
+        
+        .menu-bar>ul {
+            display: inline-block;
+        }
+        
+        .menu-bar>ul>li {}
+        
+        .menu-bar>ul>li a {
+            color: #FFFFFF;
+            font-size: 16px;
+            font-weight: 400;
+        }
+        
+        .menu-book {
+            padding-right: 0px !important;
+        }
+        
+        .menu-book a {
+            display: inline-block;
+            height: 100%;
+            padding: 0 40px;
+            margin: 0px;
+            background-color: #2EAEC5;
+        }
+        
+        .menu-bar .dropdown-menu a {
+            color: #222222;
+        }
+        
+        .button_container {
+            display: inline-block;
+            position: relative;
+            height: 27px;
+            width: 30px;
+            cursor: pointer;
+            vertical-align: middle;
+            z-index: 1000;
+            transition: opacity .25s ease;
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+        
+        .button_container:hover {
+            opacity: .7;
+        }
+        
+        .button_container.active .top {
+            transform: translateY(11px) translateX(0) rotate(45deg);
+            background: #FFF;
+        }
+        
+        .button_container.active .middle {
+            opacity: 0;
+            background: #FFF;
+        }
+        
+        .button_container.active .bottom {
+            transform: translateY(-11px) translateX(0) rotate(-45deg);
+            background: #FFF;
+        }
+        
+        .button_container span {
+            background: #FFFFFF;
+            border: none;
+            height: 3px;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: all .35s ease;
+            cursor: pointer;
+        }
+        
+        .button_container span:nth-of-type(2) {
+            top: 11px;
+        }
+        
+        .button_container span:nth-of-type(3) {
+            top: 22px;
+        }
+        
+        .menu-mobile {
+            text-align: right;
+        }
+        
+        body.pushy-open-left .wrapper {
+            overflow: hidden;
+            height: 100vh !important;
+        }
+        
+        @media only screen and (min-width: 769px) {
+            .menu-mobile {
+                display: none;
+            }
+            .menu-bar {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="pushy pushy-left" data-focus="#first-link">
+        <div class="pushy-content">
+            <ul>
+                <li><a href="#">Item 2 adsfasd asdfas</a></li>
+                <li class="pushy-submenu">
+                    <button id="first-link">Submenu 1</button>
+                    <ul>
+                        <li class="pushy-link"><a href="#">Item 1</a></li>
+                        <li class="pushy-link"><a href="#">Item 2</a></li>
+                        <li class="pushy-link"><a href="#">Item 3</a></li>
+                    </ul>
+                </li>
+                <li class="pushy-submenu">
+                    <button>Submenu 2</button>
+                    <ul>
+                        <li class="pushy-link"><a href="#">Item 1</a></li>
+                        <li class="pushy-link"><a href="#">Item 2</a></li>
+                        <li class="pushy-link"><a href="#">Item 3</a></li>
+                    </ul>
+                </li>
+                <li class="pushy-submenu">
+                    <button>Submenu 3</button>
+                    <ul>
+                        <li class="pushy-link"><a href="#">Item 1</a></li>
+                        <li class="pushy-link"><a href="#">Item 2</a></li>
+                        <li class="pushy-link"><a href="#">Item 3</a></li>
+                    </ul>
+                </li>
+                <li class="pushy-link"><a href="#">Item 1</a></li>
+                <li class="pushy-link"><a href="#">Item 2</a></li>
+                <li class="pushy-link"><a href="#">Item 3</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Site Overlay -->
+    <div class="site-overlay"></div>
+    <div class="wrapper" id="container" style="height:1200px;">
+        <div id="site-header">
+
+            <a href="">
+                <img src="../images/logo.png" class="logo">
+            </a>
+            <div class="menu-bar">
+                <ul class="list-inline">
+                    <li><a href="">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">Facilities</a></li>
+                    <li><a href="">Contact</a></li>
+                    <li class="menu-book"><a href="">Book Now</a></li>
+                </ul>
+            </div>
+            <div class="menu-mobile">
+                <a href="#" style="border:2px solid #eeeeee;padding:10px;">Book Now</a>
+                <div class="button_container menu-toggle menu-btn" id="toggle"><span class="top"></span><span class="middle"></span><span class="bottom"></span></div>
+
+            </div>
+
+        </div>
+        <div class="content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo ipsa pariatur quaerat, animi eligendi beatae ex ullam commodi voluptatem magni, quas ad ut fuga, minus inventore porro non tempore veniam!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero sapiente nemo consequatur illum quidem id, suscipit doloribus atque aliquam, expedita error porro, sunt iure laborum explicabo commodi! Officiis, fugit quia.</p>
+        </div>
+    </div>
+
+
+    <script src="../dev/assets/plugins/jquery/jquery.js"></script>
+
+    <script src="../dev/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../dev/assets/plugins/pushy/js/pushy.min.js"></script>
+
+</body>
+
+</html>
